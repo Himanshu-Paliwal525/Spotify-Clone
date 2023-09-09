@@ -14,6 +14,9 @@ nav{
 }
 
 nav ul{
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     list-style-type: none;
@@ -22,6 +25,13 @@ nav ul{
     color: white;
 }
 
+.home {
+    text-decoration: none;
+    color: white;
+}
+.home:hover {
+    color: #1ed861;
+}
 nav ul li{
     padding: 0 12px;
 }
@@ -44,6 +54,8 @@ nav ul li{
    font-family: 'Varela Round', sans-serif;
    display: flex;
    margin: 23px auto;
+   margin-top: 100px;
+   
    width: 70%;
    border-radius: 12px;
    padding: 34px;
@@ -61,10 +73,26 @@ nav ul li{
     align-items: center;
     flex-direction: column; 
 }
-
-.icons{
-    margin-top: 14px; 
+.base {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
 }
+.songInfo {
+    display: flex;
+    align-items: center;
+}
+.songInfo{
+    left: 10vw;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img{
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
 .icons i{
     cursor: pointer;
 }
@@ -78,16 +106,21 @@ nav ul li{
     margin-top: 74px;
 }
 
+
 .songItem{
-    height: 50px;
     display: flex;
     background-color: white;
-    
+    padding: 12px;
     color: black;
     margin: 12px 0;
     justify-content: space-between;
     align-items: center;
     border-radius: 34px;
+}
+.songItem:hover{
+    background-color: #1ed861;
+    color: white;
+    text-shadow: 0px 0px 2px black;
 }
 
 .songItem img{
@@ -98,25 +131,42 @@ nav ul li{
 
 .timestamp{
     margin: 0 23px;
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .timestamp i{
     cursor: pointer;
 }
 
-.songInfo{
-    position: absolute;
-    left: 10vw;
-    font-family: 'Varela Round', sans-serif;
-}
 
-.songInfo img{
-    opacity: 0;
-    transition: opacity 0.4s ease-in;
-}
 
 @media only screen and (max-width: 1100px) {
     body {
-      background-color: red;
+        background-color: red;
+    }
+    .container {
+        width: 100%;
+        justify-content: center;
+        border-radius: 0;
+        background-color: black;
+        outline: 2px solid black;
+        background-image: none;
+    }
+    .bottom {
+        position: fixed;
+        width: 100%;
+    }
+    .base {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    .songInfo {
+        margin-bottom: 7px;
+        display: block;
+        
     }
   }
